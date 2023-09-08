@@ -8,7 +8,7 @@
         <Product>簡易綜合所得稅試算</Product>
         <Version>23.9.0</Version>
         <Copyright>© 2023 鐘柏倫 (Cenlun Chung Po Lun)</Copyright>
-        <ApplicationIcon>Icon.ico</ApplicationIcon>
+        <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
 
