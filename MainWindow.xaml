@@ -71,5 +71,8 @@
         <Button Content="計算" HorizontalAlignment="Left" Margin="20,0,0,20" VerticalAlignment="Bottom" FontSize="16"
                 Style="{DynamicResource SoftButton}" Click="Calculate" />
         <Label x:Name="Result" HorizontalAlignment="Left" Margin="100,0,0,30" VerticalAlignment="Bottom" FontSize="16" />
+
+        <Button Content="關於" HorizontalAlignment="Right" Margin="0,0,20,20" VerticalAlignment="Bottom" FontSize="16"
+                Style="{DynamicResource SoftButton}" Click="ShowAboutWindow" />
     </Grid>
 </Window>

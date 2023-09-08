@@ -125,4 +125,10 @@ public partial class MainWindow
         };
         Result.Content = _tax <= 0 ? "無應納稅額" : $"應納稅額：{Math.Floor(_tax)}";
     }
+
+    private void ShowAboutWindow(object sender, RoutedEventArgs e)
+    {
+        var aboutWindow = new AboutWindow();
+        aboutWindow.ShowDialog();
+    }
 }
