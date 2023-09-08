@@ -7,6 +7,69 @@
         WindowStartupLocation="CenterScreen"
         Width="550"
         Height="768"
-        Title="簡易綜合所得稅試算">
-    <Grid />
+        Title="簡易綜合所得稅試算"
+        Background="#F8F6FF"
+        Loaded="Window_Loaded">
+    <Grid>
+        <RadioButton x:Name="Single" Content="單身" HorizontalAlignment="Left" Margin="25,20,0,0" VerticalAlignment="Top"
+                     FontSize="16" Checked="RadioButton_Checked" />
+        <RadioButton x:Name="Married" Content="已婚" HorizontalAlignment="Left" Margin="100,20,0,0"
+                     VerticalAlignment="Top" FontSize="16" Checked="RadioButton_Checked" />
+
+        <Label Content="戶口人數" HorizontalAlignment="Left" Margin="20,60,0,0" VerticalAlignment="Top" FontSize="16" />
+        <TextBox x:Name="PeopleCount" HorizontalAlignment="Right" Margin="0,50,66,0" TextWrapping="NoWrap"
+                 VerticalAlignment="Top" Width="120" FontSize="16" Style="{DynamicResource SoftInput}" />
+        <Label Content="人" HorizontalAlignment="Right" Margin="0,60,20,0" VerticalAlignment="Top" FontSize="16" />
+
+        <Label Content="70 歲以上" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" FontSize="16" />
+        <TextBox x:Name="Above70Count" HorizontalAlignment="Right" Margin="0,110,66,0" TextWrapping="NoWrap"
+                 VerticalAlignment="Top" Width="120" FontSize="16" Style="{DynamicResource SoftInput}" />
+        <Label Content="人" HorizontalAlignment="Right" Margin="0,120,20,0" VerticalAlignment="Top" FontSize="16" />
+
+        <Label Content="身心障礙人士" HorizontalAlignment="Left" Margin="20,180,0,0" VerticalAlignment="Top" FontSize="16" />
+        <TextBox x:Name="DisabledCount" HorizontalAlignment="Right" Margin="0,170,66,0" TextWrapping="NoWrap"
+                 VerticalAlignment="Top" Width="120" FontSize="16" Style="{DynamicResource SoftInput}" />
+        <Label Content="人" HorizontalAlignment="Right" Margin="0,180,20,0" VerticalAlignment="Top" FontSize="16" />
+
+        <Label Content="扶養 5 歲以下兒童" HorizontalAlignment="Left" Margin="20,240,0,0" VerticalAlignment="Top"
+               FontSize="16" />
+        <TextBox x:Name="Under5ChildCount" HorizontalAlignment="Right" Margin="0,230,66,0" TextWrapping="NoWrap"
+                 VerticalAlignment="Top" Width="120" FontSize="16" Style="{DynamicResource SoftInput}" />
+        <Label Content="人" HorizontalAlignment="Right" Margin="0,240,20,0" VerticalAlignment="Top" FontSize="16" />
+
+        <Label Content="須長期照顧之身心失能者" HorizontalAlignment="Left" Margin="20,300,0,0" VerticalAlignment="Top"
+               FontSize="16" />
+        <TextBox x:Name="LongTermCareCount" HorizontalAlignment="Right" Margin="0,290,66,0" TextWrapping="NoWrap"
+                 VerticalAlignment="Top" Width="120" FontSize="16" Style="{DynamicResource SoftInput}" />
+        <Label Content="人" HorizontalAlignment="Right" Margin="0,300,20,0" VerticalAlignment="Top" FontSize="16" />
+
+        <Label Content="本人薪資所得" HorizontalAlignment="Left" Margin="20,359,0,0" VerticalAlignment="Top" FontSize="16" />
+        <TextBox x:Name="SelfWageIncome" HorizontalAlignment="Right" Margin="0,350,66,0" TextWrapping="NoWrap"
+                 VerticalAlignment="Top" Width="120" FontSize="16" Style="{DynamicResource SoftInput}" />
+        <Label Content="元" HorizontalAlignment="Right" Margin="0,360,20,0" VerticalAlignment="Top" FontSize="16" />
+
+        <Label Content="配偶薪資所得" HorizontalAlignment="Left" Margin="20,420,0,0" VerticalAlignment="Top" FontSize="16" />
+        <TextBox x:Name="SpouseWageIncome" HorizontalAlignment="Right" Margin="0,410,66,0" TextWrapping="NoWrap"
+                 VerticalAlignment="Top" Width="120" FontSize="16" Style="{DynamicResource SoftInput}" />
+        <Label Content="元" HorizontalAlignment="Right" Margin="0,420,20,0" VerticalAlignment="Top" FontSize="16" />
+
+        <Label Content="利息所得" HorizontalAlignment="Left" Margin="20,480,0,0" VerticalAlignment="Top" FontSize="16" />
+        <TextBox x:Name="InterestIncome" HorizontalAlignment="Right" Margin="0,470,66,0" TextWrapping="NoWrap"
+                 VerticalAlignment="Top" Width="120" FontSize="16" Style="{DynamicResource SoftInput}" />
+        <Label Content="元" HorizontalAlignment="Right" Margin="0,480,20,0" VerticalAlignment="Top" FontSize="16" />
+
+        <Label Content="租賃所得" HorizontalAlignment="Left" Margin="20,540,0,0" VerticalAlignment="Top" FontSize="16" />
+        <TextBox x:Name="LeaseIncome" HorizontalAlignment="Right" Margin="0,530,66,0" TextWrapping="NoWrap"
+                 VerticalAlignment="Top" Width="120" FontSize="16" Style="{DynamicResource SoftInput}" />
+        <Label Content="元" HorizontalAlignment="Right" Margin="0,540,20,0" VerticalAlignment="Top" FontSize="16" />
+
+        <Label Content="其他所得" HorizontalAlignment="Left" Margin="20,600,0,0" VerticalAlignment="Top" FontSize="16" />
+        <TextBox x:Name="OtherIncome" HorizontalAlignment="Right" Margin="0,590,66,0" TextWrapping="NoWrap"
+                 VerticalAlignment="Top" Width="120" FontSize="16" Style="{DynamicResource SoftInput}" />
+        <Label Content="元" HorizontalAlignment="Right" Margin="0,600,20,0" VerticalAlignment="Top" FontSize="16" />
+
+        <Button Content="計算" HorizontalAlignment="Left" Margin="20,0,0,20" VerticalAlignment="Bottom" FontSize="16"
+                Style="{DynamicResource SoftButton}" Click="Calculate" />
+        <Label x:Name="Result" HorizontalAlignment="Left" Margin="100,0,0,30" VerticalAlignment="Bottom" FontSize="16" />
+    </Grid>
 </Window>
