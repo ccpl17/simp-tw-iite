@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using System.Text.Json;
 using System.Windows;
 
 namespace SimpleTaiwanIITE;
@@ -42,9 +46,36 @@ public partial class MainWindow
         InitializeComponent();
     }
 
-    private void Window_Loaded(object sender, RoutedEventArgs e)
+    private async void Window_Loaded(object sender, RoutedEventArgs e)
     {
         Single.IsChecked = true;
+
+        const string currentVersion = "23.9.0";
+        const string endpointUrl = "https://gist.githubusercontent.com/ccpl17/4d405f115dacc50d9dc955bb9d27be28/raw/194ba74550bccb6da576d2cb59eec88d5ca2378e/simple-taiwan-iite.json";
+
+        try
+        {
+            var client = new HttpClient();
+            var response = await client.GetAsync(endpointUrl);
+
+            var jsonContent = response.IsSuccessStatusCode ? await response.Content.ReadAsStringAsync() : null;
+            var data = jsonContent != null ? JsonSerializer.Deserialize<Dictionary<string, string>>(jsonContent) : null;
+            var remoteVersion = data != null
+                ? data.TryGetValue("version", out var versionValue) ? versionValue : currentVersion
+                : currentVersion;
+
+            var result = Version.Parse(currentVersion) < Version.Parse(remoteVersion)
+                ? MessageBox.Show("有可用的更新，你想要現在下載嗎", "有可用的更新", MessageBoxButton.YesNo, MessageBoxImage.Question,
+                    MessageBoxResult.Yes)
+                : MessageBoxResult.No;
+            if (result == MessageBoxResult.Yes)
+                Process.Start("explorer",
+                    "https://github.com/ccpl17/simple-taiwan-iite/releases");
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine(exception.Message);
+        }
     }
 
     private void RadioButton_Checked(object sender, RoutedEventArgs e)
