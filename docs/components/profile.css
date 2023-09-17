@@ -1,0 +1,45 @@
+.profile-text-container {
+  gap: 12px;
+
+  @media (min-width: 992px) {
+    gap: 16px;
+  }
+}
+
+.name {
+  /* Typography */
+  color: #575757;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 24px */
+  letter-spacing: 0.24px;
+
+  @media (min-width: 992px) {
+    /* Typography */
+    font-size: 32px;
+    letter-spacing: 0.32px;
+  }
+}
+
+.info {
+  /* Layout */
+  padding-top: 12px;
+
+  /* Typography */
+  color: #575757;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 16px */
+  letter-spacing: 0.16px;
+
+  @media (min-width: 992px) {
+    /* Layout */
+    padding-top: 16px;
+
+    /* Typography */
+    font-size: 18.72px;
+    letter-spacing: 0.187px;
+  }
+}

@@ -1,0 +1,43 @@
+.soft-button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  transition: 1s cubic-bezier(0, 1, 0, 1);
+
+  /* Layout */
+  display: flex;
+  width: 100px;
+  height: 51px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  /* Style */
+  border-radius: 8px;
+  border-width: 0;
+  background: #fff;
+  box-shadow: 3px 3px 16px 0 rgba(0, 0, 0, 0.08);
+
+  /* Typography */
+  color: #363942;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 16px */
+  letter-spacing: 0.16px;
+  text-decoration: none;
+}
+
+.soft-button:hover {
+  scale: 1.03;
+}
+
+.soft-button:active {
+  scale: 0.97;
+
+  /* Style */
+  box-shadow: 3px 3px 16px 0 rgba(0, 0, 0, 0.18);
+}
