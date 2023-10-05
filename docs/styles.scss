@@ -1,11 +1,11 @@
-@import "styles/layout.css";
-@import "styles/utilities.css";
-@import "styles/colors.css";
+@import "styles/layout";
+@import "styles/utilities";
+@import "styles/colors";
 
-@import "widgets/soft-button.css";
+@import "widgets/soft-button";
 
-@import "components/profile.css";
-@import "components/copyright.css";
+@import "components/profile";
+@import "components/copyright";
 
 .soft-button {
   width: 100px;
